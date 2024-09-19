@@ -1,8 +1,8 @@
 
 package datos;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.PreparedStatement; //
+import java.sql.ResultSet;  //
 import database.Conexion;
 import datos.CrudInterface.CategoriaInterface;
 import entidades.Categoria;

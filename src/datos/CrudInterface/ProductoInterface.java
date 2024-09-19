@@ -3,7 +3,6 @@ package datos.CrudInterface;
 
 import java.util.List;
 
-
 public interface ProductoInterface<T> {
     
     //metodos para el Crud

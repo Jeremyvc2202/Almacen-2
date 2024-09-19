@@ -32,7 +32,7 @@ public class CategoriaControl {
         this.modeloTabla=new DefaultTableModel(null,titulos);
         
         String estado;
-        String[] registro= new String[4];
+        String[] registro= new String[2];
         
         this.registrosMostrados=0;
         

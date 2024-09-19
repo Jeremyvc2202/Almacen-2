@@ -21,6 +21,8 @@ public class Productos {
 
     public Productos() {
     }
+
+    
     
     //constructor con parametros
 
@@ -127,6 +129,8 @@ public class Productos {
     public void setCondicion(boolean condicion) {
         this.condicion = condicion;
     }
+
+    
     
     //ToString
 

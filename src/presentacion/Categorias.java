@@ -11,14 +11,11 @@ import javax.swing.table.TableRowSorter;
 import javax.swing.text.TabableView;
 import negocio.CategoriaControl;
 
-/**
- *
- * @author SENATI
- */
+
 public class Categorias extends javax.swing.JInternalFrame {
 
     
-    //invocamos una clase y le damos como propiedad una variables
+    //invocamos una clase y le damos como propiedad una variable
     private final CategoriaControl CONTROL;
     private String accion;
     private String nombreAnt;
@@ -32,7 +29,7 @@ public class Categorias extends javax.swing.JInternalFrame {
         tabGeneral.setEnabledAt(1, false);   
     }
     
-    //metodos CRUD
+    //metodo CRUD
     private void listar(String texto){
         tablalistado.setModel(this.CONTROL.listar(texto));
         TableRowSorter orden = new TableRowSorter(tablalistado.getModel());
@@ -90,7 +87,7 @@ public class Categorias extends javax.swing.JInternalFrame {
 
         tabGeneral.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Formulario de categorias", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Lucida Sans Unicode", 1, 14)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/imagenes/ima.png"))); // NOI18N
@@ -113,7 +110,7 @@ public class Categorias extends javax.swing.JInternalFrame {
             }
         });
 
-        btnbuscarcategoria.setBackground(new java.awt.Color(255, 153, 255));
+        btnbuscarcategoria.setBackground(new java.awt.Color(153, 255, 204));
         btnbuscarcategoria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnbuscarcategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/imagenes/lupa.png"))); // NOI18N
         btnbuscarcategoria.setText("Buscar Categoria");
@@ -123,7 +120,7 @@ public class Categorias extends javax.swing.JInternalFrame {
             }
         });
 
-        btnregistrar.setBackground(new java.awt.Color(255, 153, 255));
+        btnregistrar.setBackground(new java.awt.Color(153, 255, 204));
         btnregistrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/imagenes/registro.png"))); // NOI18N
         btnregistrar.setText("Registrar Categoria");
@@ -133,7 +130,7 @@ public class Categorias extends javax.swing.JInternalFrame {
             }
         });
 
-        btneditar.setBackground(new java.awt.Color(255, 153, 255));
+        btneditar.setBackground(new java.awt.Color(153, 255, 204));
         btneditar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btneditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/imagenes/editar.png"))); // NOI18N
         btneditar.setText("Editar Categoria");
@@ -168,7 +165,7 @@ public class Categorias extends javax.swing.JInternalFrame {
             }
         });
 
-        btnactivar.setBackground(new java.awt.Color(153, 255, 153));
+        btnactivar.setBackground(new java.awt.Color(255, 255, 204));
         btnactivar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnactivar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/imagenes/check.png"))); // NOI18N
         btnactivar.setText("Activar Categoria");
@@ -186,25 +183,28 @@ public class Categorias extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtbuscarcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnbuscarcategoria)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnregistrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btneditar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1016, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtbuscarcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnbuscarcategoria)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnregistrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btneditar))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1016, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(btnactivar, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btndesactivar, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(btndesactivar, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnactivar, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(95, 95, 95)
+                        .addGap(456, 456, 456)
                         .addComponent(txttotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
@@ -220,18 +220,18 @@ public class Categorias extends javax.swing.JInternalFrame {
                     .addComponent(btneditar))
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btndesactivar, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-                        .addComponent(txttotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnactivar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txttotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnactivar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btndesactivar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         tabGeneral.addTab("Listado de Categorias", jPanel2);
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/imagenes/categoria_1.png"))); // NOI18N
@@ -270,7 +270,7 @@ public class Categorias extends javax.swing.JInternalFrame {
         jLabel5.setForeground(new java.awt.Color(255, 0, 0));
         jLabel5.setText("(*) Indica que es un campos obligatorio");
 
-        btnguardarcategoria.setBackground(new java.awt.Color(204, 153, 255));
+        btnguardarcategoria.setBackground(new java.awt.Color(204, 255, 204));
         btnguardarcategoria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnguardarcategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/imagenes/guardar.png"))); // NOI18N
         btnguardarcategoria.setText(" Guardar");
@@ -282,7 +282,7 @@ public class Categorias extends javax.swing.JInternalFrame {
             }
         });
 
-        btncancelarcategoria.setBackground(new java.awt.Color(204, 153, 255));
+        btncancelarcategoria.setBackground(new java.awt.Color(255, 153, 153));
         btncancelarcategoria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btncancelarcategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/imagenes/cancel_1.png"))); // NOI18N
         btncancelarcategoria.setText("Cancelar");
@@ -317,9 +317,9 @@ public class Categorias extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(304, 304, 304)
                         .addComponent(btnguardarcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
+                        .addGap(31, 31, 31)
                         .addComponent(btncancelarcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addContainerGap(273, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,7 +338,7 @@ public class Categorias extends javax.swing.JInternalFrame {
                         .addComponent(jLabel4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnguardarcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btncancelarcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -358,10 +358,7 @@ public class Categorias extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tabGeneral)
-                .addContainerGap())
+            .addComponent(tabGeneral, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();

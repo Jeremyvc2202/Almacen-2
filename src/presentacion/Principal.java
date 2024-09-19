@@ -8,7 +8,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        setExtendedState(MAXIMIZED_BOTH);// eXPANDIR LA VENTANA AL 100%
+        setExtendedState(MAXIMIZED_BOTH);// EXPANDIR LA VENTANA AL 100%
     }
 
     
