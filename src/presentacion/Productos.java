@@ -276,7 +276,7 @@ public class Productos extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("Listado de productos", jPanel1);
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
 
         cbocategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arroz", "Azucar", "Aceite", "Fideos", "Menestra", "Leche ", "Huevos", "Atun", "Filete", "Detergente", "Jabon", "Pasta Dental", "Legia", "Dulces" }));
         cbocategoria.setBorder(null);
