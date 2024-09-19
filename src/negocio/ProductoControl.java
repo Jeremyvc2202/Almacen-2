@@ -44,7 +44,7 @@ public class ProductoControl {
         List<Productos>lista= new ArrayList<>();
         lista.addAll(DATOS.listar(texto));
         
-        String[] titulos={"IdProducto","IdCategoria","Nombre Producto","Descripción Producto","Imagen producto","Codigo Producto","Marca Producto","Cantidad Producto","Fecha Vencimiento","Precio Compra","Condición"};
+        String[] titulos={"IdProducto","Categoria","Nombre Producto","Descripción Producto","Imagen producto","Codigo Producto","Marca Producto","Cantidad Producto","Fecha Vencimiento","Precio Compra","Condición"};
         this.modeloTabla=new DefaultTableModel(null,titulos);
         
         String condicion;
@@ -59,7 +59,7 @@ public class ProductoControl {
                 condicion="Inactivo";
             }
             registro[0]=Integer.toString(item.getId_producto());
-            registro[1]=Integer.toString(item.getCategoria_id());
+            registro[1]=item.getNombre_categoria();
             registro[2]=item.getNombre_producto();
             registro[3]=item.getDescripcion_producto();
             registro[4]=item.getImagen_producto();
@@ -78,23 +78,23 @@ public class ProductoControl {
     }
      
     public int total(){
-        return DATOS.total();
+        return DATOSCAT.total();
     }  
     public int totalMostrado(){
         return this.registrosMostrados;
     }
     
     //metodo para desactivar categoria
-    public String desactivar(int id){
-        if(DATOS.desactivar(id)){
+    public String desactivar(int id_producto){
+        if(DATOS.desactivar(id_producto)){
             return "OK";
         }else{
             return "No se puede desactivar el producto";
         }
     }
     
-    public String activar(int id){
-        if(DATOS.activar(id)){
+    public String activar(int id_producto){
+        if(DATOS.activar(id_producto)){
             return "OK";
         }else{
             return "No se puede activar el producto";

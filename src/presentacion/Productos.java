@@ -700,38 +700,45 @@ public class Productos extends javax.swing.JInternalFrame {
 
     private void btnactivarproductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactivarproductosActionPerformed
         if (tablalistado3.getSelectedRowCount() == 1) {
-        String id = String.valueOf(tablalistado3.getValueAt(tablalistado3.getSelectedRow(), 0));
-        String nombre = String.valueOf(tablalistado3.getValueAt(tablalistado3.getSelectedRow(), 1));
-        if (JOptionPane.showConfirmDialog(this, "¿Deseas activar el producto: " + nombre + "?", "Activar", JOptionPane.YES_NO_OPTION) == 0) {
-            String resp = this.CONTROL.activar(Integer.parseInt(id));
-            if (resp.equals("OK")) {
-                this.mensajeOK("Producto activado");
-                this.listar("");
-            } else {
-                this.mensajeError(resp);
+            // Obtenemos el ID del producto seleccionado
+            String id_producto = String.valueOf(tablalistado3.getValueAt(tablalistado3.getSelectedRow(), 0));
+            String nombreProducto = String.valueOf(tablalistado3.getValueAt(tablalistado3.getSelectedRow(), 1));  // Nombre del producto
+
+            // Confirmamos la activación con el usuario
+            int confirmacion = JOptionPane.showConfirmDialog(this, "¿Deseas activar el producto: " + nombreProducto + "?", "Activar", JOptionPane.YES_NO_OPTION);
+            if (confirmacion == 0) {
+                // Llamamos al método para activar el producto en la base de datos
+                String resp = this.CONTROL.activar(Integer.parseInt(id_producto));
+                if (resp.equals("OK")) {
+                    this.mensajeOK("Producto activado correctamente.");
+                    this.listar("");  // Refrescamos la lista de productos en la tabla
+                } else {
+                    this.mensajeError(resp);  // Mostramos error en caso de fallo
+                }
             }
-        }
-        } else {
-        this.mensajeError("Selecciona un producto para activar");
+            }else {
+        this.mensajeError("Debes seleccionar un producto para activar.");
     }
     }//GEN-LAST:event_btnactivarproductosActionPerformed
 
     private void btndesactivarproductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndesactivarproductosActionPerformed
         if (tablalistado3.getSelectedRowCount() == 1) {
-        String id = String.valueOf(tablalistado3.getValueAt(tablalistado3.getSelectedRow(), 0));
-        String nombre = String.valueOf(tablalistado3.getValueAt(tablalistado3.getSelectedRow(), 1));
-        if (JOptionPane.showConfirmDialog(this, "¿Deseas desactivar el producto: " + nombre + "?", "Desactivar", JOptionPane.YES_NO_OPTION) == 0) {
-            String resp = this.CONTROL.desactivar(Integer.parseInt(id));
-            if (resp.equals("OK")) {
-                this.mensajeOK("Producto desactivado");
-                this.listar("");
-            } else {
-                this.mensajeError(resp);
+            String id_producto = String.valueOf(tablalistado3.getValueAt(tablalistado3.getSelectedRow(), 0));
+            String nombreProducto = String.valueOf(tablalistado3.getValueAt(tablalistado3.getSelectedRow(), 1));  // Nombre del producto
+
+            int confirmacion = JOptionPane.showConfirmDialog(this, "¿Deseas desactivar el producto: " + nombreProducto + "?", "Desactivar", JOptionPane.YES_NO_OPTION);
+            if (confirmacion == 0) {
+                String resp = this.CONTROL.desactivar(Integer.parseInt(id_producto));
+                if (resp.equals("OK")) {
+                    this.mensajeOK("Producto desactivado correctamente.");
+                    this.listar("");  // Refrescamos la lista de productos en la tabla
+                } else {
+                    this.mensajeError(resp);  // Mostramos error en caso de fallo
+                }
             }
+        } else {
+            this.mensajeError("Debes seleccionar un producto para desactivar.");
         }
-    } else {
-        this.mensajeError("Selecciona un producto para desactivar");
-    }
     }//GEN-LAST:event_btndesactivarproductosActionPerformed
 
 

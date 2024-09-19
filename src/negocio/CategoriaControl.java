@@ -66,7 +66,7 @@ public class CategoriaControl {
         }
     }
     
-    //metodo para actializar datos de la categoria
+    //metodo para actualizar datos de la categoria
     public String actualizar(int id,String nombre,String nombreAt,String descripcion){
         if(nombre.equals(nombreAt)){
             obj.setIdcategoria(id);
